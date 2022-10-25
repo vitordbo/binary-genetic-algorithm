@@ -8,8 +8,8 @@ package src;
  *
  * @author vitor
  */
-public class Individuo {
-    int valor; // valor do individuo
-    char[] cromossomos; // binario 
-    int pontuacao; // para saber quem é o melhor individuo
+public class Main {
+    public static void main(String[] args) {
+        
+    }
 }
