@@ -10,6 +10,14 @@ package src;
  */
 public class Main {
     public static void main(String[] args) {
+
+    /*  
+        instruções
+        x, y [0, 7]
+        pop inicial = 4 
+        mutação taxa 1%
+        crossOver 70%
+    */
         
         // valores
        int minFuncao = 0;
@@ -20,26 +28,27 @@ public class Main {
        int taxaMutacao = 1;
 
        AlgoritmoGenetico algoritmo = new AlgoritmoGenetico(minFuncao, maxFuncao, numIndividuos, numGeracoes, taxaCrossover, taxaMutacao);
-       AlgoritmoGenetico algoritmo2 = new AlgoritmoGenetico(minFuncao, maxFuncao, numIndividuos, numGeracoes, taxaCrossover, taxaMutacao);
 
         System.out.println("******************");
         System.out.println("Geração inicial");
         System.out.println("******************");
-        
-        int x = algoritmo.individuos[0];
-        int y = algoritmo.individuos[1];
 
-        int x1 = algoritmo2.individuos[0];
-        int y1 = algoritmo2.individuos[1];
+        algoritmo.imprimeGeracao();
 
-        // testar se gera os individuos entre 0 e 7
-        System.out.println("Primeiro individuo x = " + x + " ,y =  " + y);
-        System.out.println("Primeiro individuo x = " + x1 + " ,y =  " + y1);
-        //algoritmo => mostrar geração
-        // algoritmo => gerar geração => melhor pontuação? => dois melhores pra cruzar => torneio? => crossOver
-        // chance de ter mutaçao 
+        // cria as gerações fornecidas
+        for (int i = 0; i< numGeracoes; i++){
+            System.out.println("********************");
+            System.out.println("Geracao " + (i + 1));
+            System.out.println("********************");
         
-        //for para gerações
-        // mostrar melhores 
-    }
+            algoritmo.novaGeracao();
+            algoritmo.imprimeGeracao();
+        }
+
+        //mostra o melhor individuo
+        System.out.println("********************");
+        System.out.println("Melhor individuo");
+        System.out.println("********************");
+        algoritmo.imprimeMelhorIndividuo();
+    } 
 }
